@@ -17,10 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from staff.views import DoctorListCreateView
-from staff.views import DoctorRetreiveUpdateDeleteView
+from staff.views import DoctorRetrieveUpdateDeleteView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('doctors/',DoctorListCreateView.as_view()),
-    path('doctors/<int:pk>/',DoctorRetreiveUpdateDeleteView.as_view()),
+    path('doctors/',DoctorRetrieveUpdateDeleteView.as_view()),
 ]
