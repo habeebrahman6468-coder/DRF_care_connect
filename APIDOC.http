@@ -1,0 +1,43 @@
+#================DOCTORS================
+#API call for listing doctors
+###
+GET http://127.0.0.1:8000/doctors/
+Accept: application/json
+
+#API call for creating doctor records
+###
+POST http://127.0.0.1:8000/doctors/
+Content-Type: application/json
+
+{"name":"Ajay",
+    "specialization":"neurology",
+    "fee":1000,
+    "qualification":"MBBS",
+    "email":"Ajay@gmail.com"
+}
+
+#API cal for fetching Doctors
+###
+GET http://127.0.0.1:8000/doctors/1/
+Accept: application/json
+
+#API call for updating doctors
+
+###
+PUT  http://127.0.0.1:8000/doctors/1/
+Content-Type: application/json
+
+{"name":"Habeeb",
+    "specialization":"Dermatology",
+    "fee":1000,
+    "qualification":"MBBS",
+    "email":"Habeeb@gmail.com"
+}
+
+#API call for deleting doctors
+
+###
+DELETE  http://127.0.0.1:8000/doctors/4/
+Accept: application/json
+
+#=================Appointments===========
