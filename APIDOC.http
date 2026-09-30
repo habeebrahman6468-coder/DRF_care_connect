@@ -40,4 +40,74 @@ Content-Type: application/json
 DELETE  http://127.0.0.1:8000/doctors/4/
 Accept: application/json
 
-#=================Appointments===========
+
+
+
+
+
+
+
+
+#=================Serializer endpoint===========
+
+#API call for listing 
+###
+GET http://127.0.0.1:8000/v2/doctors/
+Accept: application/json
+
+
+
+
+#API call for creating
+###
+POST http://127.0.0.1:8000/v2/doctors/
+Content-Type: application/json
+
+{"name":"Hiba",
+    "specialization":"pediatrics",
+    "fee":500,
+    "qualification":"MBBS",
+    "email":"Hiba@gmail.com"
+}
+
+
+#API cal for fetching Doctors
+###
+GET http://127.0.0.1:8000/v2/doctors/3/
+Accept: application/json
+
+
+
+#API call for creating
+###
+PUT  http://127.0.0.1:8000/v2/doctors/6/
+Content-Type: application/json
+
+{
+    "id": "6",
+    "name": "Hiba",
+    "specialization": "pediatrics",
+    "fee": 500,
+    "qualification": "MBBS",
+    "email": "Hiba@gmail.com"
+  }
+
+#API call for deleting doctors
+
+###
+DELETE  http://127.0.0.1:8000/v2/doctors/3/
+Accept: application/json
+
+
+
+
+#API call for creating admin
+###
+POST http://127.0.0.1:8000/v2/user/
+Content-Type: application/json
+
+
+{"username":"username",
+    "email":"username@gmail.com",
+    "password":"username"
+}
