@@ -50,6 +50,10 @@ class DoctorListCreateView(APIView):
 
 class DoctorRetrieveUpdateDelete(APIView):
 
+    authentication_classes = [authentication.BasicAuthentication]
+    
+    permission_classes = [permissions.IsAdminUser]
+
     def get(self,request,pk=None):
 
         qs = Doctor.objects.get(id=pk)
@@ -83,8 +87,6 @@ class DoctorRetrieveUpdateDelete(APIView):
         return Response (data={"message":"record deleted"})
 
 
-
-
 class AdminCreateView(APIView):
 
     def post(self,request):
@@ -104,6 +106,8 @@ class AdminCreateView(APIView):
         else:
 
             return Response(data=serializer_instance.errors)
+
+        
 
 
 

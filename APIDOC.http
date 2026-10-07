@@ -54,6 +54,7 @@ Accept: application/json
 ###
 GET http://127.0.0.1:8000/v2/doctors/
 Accept: application/json
+Authorization: Basic username:username
 
 
 
@@ -62,6 +63,7 @@ Accept: application/json
 ###
 POST http://127.0.0.1:8000/v2/doctors/
 Content-Type: application/json
+Authorization: Basic username:username
 
 {"name":"Hiba",
     "specialization":"pediatrics",
@@ -73,15 +75,17 @@ Content-Type: application/json
 
 #API cal for fetching Doctors
 ###
-GET http://127.0.0.1:8000/v2/doctors/3/
+GET http://127.0.0.1:8000/v2/doctors/5/
 Accept: application/json
+Authorization: Basic username:username
 
 
 
-#API call for creating
+#API call for creating Doctors
 ###
 PUT  http://127.0.0.1:8000/v2/doctors/6/
 Content-Type: application/json
+Authorization: Basic username:username
 
 {
     "id": "6",
@@ -111,3 +115,125 @@ Content-Type: application/json
     "email":"username@gmail.com",
     "password":"username"
 }
+
+
+
+
+
+
+#=================Appointment api calls================
+
+#Api call for listing appointments
+###
+GET  http://127.0.0.1:8000/appointments/
+Accept:  application/json
+
+
+#API call for creating patient appointment
+###
+POST http://127.0.0.1:8000/appointments/
+Content-Type: application/json
+
+{
+    "patient_name": "Sneha",
+    "phone": "9746123456",
+    "doctor": 1,
+    "appointment_date": "2026-10-22",
+    "problem": "Skin rash and itching"
+}
+
+
+#API call for retrieving appointments
+###
+GET http://127.0.0.1:8000/appointments/1/
+Accept: application/json
+
+
+#API call for updating appointments
+###
+PUT  http://127.0.0.1:8000/appointments/6/
+Content-Type: application/json
+
+
+
+
+#API call for deleting appointments
+
+###
+DELETE  http://127.0.0.1:8000/appointments/3/
+Accept: application/json
+
+
+
+
+
+
+
+#====================================================
+
+
+#API call for registering valid user for appointment
+###
+POST http://127.0.0.1:8000/v2/booking/signup/
+Content-Type: application/json
+
+
+{"username":"Tom",
+    "password":"django",
+    "email":"django@gmail.com"}
+
+
+
+#Api call for listing
+###
+GET http://127.0.0.1:8000/v2/booking/appointments/
+Accept: application/json
+Authorization:  Basic Tom:django
+
+#Api for creating
+###
+POST http://127.0.0.1:8000/v2/booking/appointments/
+Content-Type: application/json
+Authorization:  Basic Tom:django
+
+{
+    "patient_name": "Achu",
+    "phone": "9746125465",
+    "doctor": 5,
+    "appointment_date": "2026-10-22",
+    "problem": "head ache"
+}
+
+
+
+#Api call for Retrievig
+###
+GET http://127.0.0.1:8000/v2/booking/appointments/7/
+Accept: application/json
+Authorization: Basic Tom:django
+
+#Api for creating
+###
+PUT  http://127.0.0.1:8000/v2/booking/appointments/7/
+Content-Type: application/json
+Authorization:  Basic Tom:django
+
+{
+  "id": 7,
+  "patient_name": "unni sourav",
+  "phone": "9746123425",
+  "appointment_date": "2026-10-22",
+  "token_number": 2,
+  "appointment_time": null,
+  "problem": "Skin rash and itching",
+  "created_at": "2026-10-06T06:09:57.196069Z",
+  "doctor": 1
+}
+
+#API call for deleting
+###
+DELETE http://127.0.0.1:8000/v2/booking/appointments/11/
+Accept: application/json
+Authorization:  Basic Tom:django
+
+
